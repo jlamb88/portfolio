@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat|Lato|Roboto');
+
+.portfolio-button {
+    position: relative;
+    height: 90px;
+    width: 285px;
+    background-color: #19647e;
+    border-radius: 13px;
+    box-shadow: 0.85px 1.7px 6.75px #b3edfa;
+    display: flex;
+    justify-content: center;
+    }
+    .portfolio-button .button-key {
+        position: absolute;
+        color: #ffffff;
+        font-family: "Coda", Helvetica;
+        font-size: 28px;
+        font-weight: 400;
+        letter-spacing: 0;
+        line-height: normal;
+        text-shadow: 0px 0px 3.5px #a5f1fb;
+        top: 20px;
+    }
+    .portfolio-button .button-label {
+    position: absolute;
+    color: #d0d0d0;
+    font-family: "Lato", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 160px;
+    letter-spacing: 0;
+    line-height: normal;
+    top: 65px;
+    }
+    
+
+.about-button {
+    background-color: #ffc857;
+    border-radius: 13px;
+    height: 90px;
+    width: 135px;
+    box-shadow: 0.85px 1.7px 10px #5ea8ec;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    }
+    .about-button .button-key {
+        color: #ffffff;
+        font-family: "Coda", Helvetica;
+        font-size: 28px;
+        font-weight: 400;
+        text-shadow: 0.85px 5px 6.75px #9fdfee;
+        position: absolute;
+        top: 25px;
+    }
+    .about-button .button-label {
+        color: #e9e9e9;
+        font-family: "Lato", Helvetica;
+        font-size: 16px;
+        font-weight: 400;
+        position: absolute;
+        top: 65px;
+        left: 80px;
+}
+    
+.contact-button {
+    background-color: #119da4;
+    border-radius: 13px;
+    height: 90px;
+    width: 135px;
+    box-shadow: 0.85px 1.7px 6.75px #8bdbdb;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    }
+    .contact-button .button-key {
+        color: #ffffff;
+        font-family: "Coda", Helvetica;
+        font-size: 28px;
+        font-weight: 400;
+        position: absolute;
+        top: 25px;
+        text-shadow: 0px 0px 3.5px #7eebf2bf;
+        white-space: nowrap;
+        width: 19px;
+    }
+    .contact-button .button-label {
+        color: #d0d0d0;
+        font-family: "Roboto", Helvetica;
+        font-size: 16px;
+        letter-spacing: -0.9px;
+        font-weight: 400;
+        left: 80px;
+        position: absolute;
+        top: 65px;
+    }
+
+    
+@keyframes hero-icon-load {
+    10% { opacity:0.5}
+    
+    20% {opacity: 0.1}
+    
+    30% {content: "Joseph Lamb";
+    letter-spacing: -4px;}
+    
+    50% {content: "Joseph Lamb";
+        opacity: 1}
+
+    80% {opacity: 0.1}
+    
+    }
+
+#jl-icon::after {
+    content: 'JL';
+    opacity: 1;
+    transition: opacity 0.6s ease-out;
+    animation: hero-icon-load 4s ease-in 1s;
+    }
+    
+#jl-icon:hover::after {
+    opacity: 0;
+    content: '';
+    }
+    
+ #jl-icon:hover::before {
+    content: 'Joseph Lamb';
+    opacity: 1;
+    transition: opacity ease-in 0.6s; /* Delay the appearance */
+    letter-spacing: -4px;
+    }
+    
+#jl-icon::before {
+    content: '';
+    opacity: 0;
+    }
+    
+.icon-text {
+    color: var(--text-color);
+    font-family: 'Content',Helvetica, Arial, san-serif;
+    font-size: 90px;
+    font-weight: 700;
+    letter-spacing: -8px;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 160px;
+    left: 385px;
+    border: 6px solid;
+    border-color: var(--text-color);
+    border-radius: 6px;
+    padding: 16px;
+    min-width: 100px;
+    }
+    
+.contact-scroll {
+    display: flex;
+    flex-direction: column;
+    grid-area: contactScroll;
+    /* float: right; */
+    background-color: transparent;
+    width: 40px;
+    position: sticky;
+    bottom: 0px;
+    left: auto;
+    right: 50px;
+    z-index: 10;
+    /* height: 100vh; */
+    min-height: 700px;
+    height: auto;
+    justify-content: end;
+    }
+    .contact-scroll ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    .contact-scroll li {
+        padding: 4px;
+    }
+    .contact-scroll a {
+        text-decoration: none;
+    }
+    .contact-scroll .email {
+        background-color: transparent;
+        color: var(--text-color);
+        font-family: "Montserrat", Helvetica;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: normal;
+        text-align: left;
+        /* transform: rotate(90.00deg); */
+        writing-mode: vertical-rl;
+    }
+    .contact-scroll .email-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
+        padding: 0px;
+    }
+    .email-wrapper::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 120px;
+        margin-top: 10px;
+        background-color: var(--text-color);
+}
+
+.theme-scroll {
+    display: flex;
+    flex-direction: column;
+    grid-area: themeScroll;
+    /* float: left; */
+    justify-content: flex-end;
+    background-color: transparent;
+    min-height: 800px;
+    max-width: 60px;
+    position: sticky;
+    bottom: 60px;
+    left: -12px; 
+    right: auto;
+    z-index: 9999; 
+    }
+    .theme-scroll .bumper {
+        position: relative;
+        top: 0px;
+        min-height: 800px;
+        width: 60px;
+        flex:0 0 auto;
+        background-color: transparent;
+    }
+    .theme-scroll ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    .theme-scroll li {
+        padding: 8px;
+    }
+    .theme-scroll .theme-text-flourish {
+        color: #ffffff99;
+        font-family: "Caveat", Helvetica;
+        font-size: 28px;
+        font-weight: 400;
+        left: 12px;
+        letter-spacing: 0;
+        line-height: normal;
+        opacity: 0.4;
+        bottom: 0px;
+        writing-mode: vertical-rl;
+        width: 100%;
+      }     
+    .theme-scroll .theme-tab {
+        background-color: #d9d9d9DD;
+        border-radius: 0px 8px 8px 0px;
+        height: 150px;
+        left: -6px;
+        width: 35px;
+        opacity: 1;
+      }     
+    .theme-scroll .theme-tab .text-value {
+        color: #ffffffb2;
+        font-family: "Content", Helvetica;
+        font-size: 20px;
+        font-weight: 400;
+        left: -6px;
+        letter-spacing: -1px;
+        line-height: normal;
+        position: relative;
+        top: 70px;
+        writing-mode: vertical-rl;
+        width: 35px;
+}
+
