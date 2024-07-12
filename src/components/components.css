@@ -158,18 +158,14 @@
     display: flex;
     flex-direction: column;
     grid-area: contactScroll;
-    /* float: right; */
     background-color: transparent;
     width: 40px;
     position: sticky;
-    bottom: 0px;
-    left: auto;
-    right: 50px;
     z-index: 10;
     /* height: 100vh; */
     min-height: 700px;
     height: auto;
-    justify-content: end;
+    justify-content:flex-end;
     }
     .contact-scroll ul {
         display: flex;
@@ -218,13 +214,12 @@
     display: flex;
     flex-direction: column;
     grid-area: themeScroll;
-    /* float: left; */
     justify-content: flex-end;
     background-color: transparent;
     min-height: 800px;
     max-width: 60px;
     position: sticky;
-    bottom: 60px;
+    margin-bottom: 60px;
     left: -12px; 
     right: auto;
     z-index: 9999; 
@@ -256,7 +251,7 @@
         left: 12px;
         letter-spacing: 0;
         line-height: normal;
-        opacity: 0.4;
+        opacity: 0.6;
         bottom: 0px;
         writing-mode: vertical-rl;
         width: 100%;
@@ -265,8 +260,8 @@
         background-color: #d9d9d9DD;
         border-radius: 0px 8px 8px 0px;
         height: 150px;
-        left: -6px;
-        width: 35px;
+        left: 0px;
+        /* width: 35px; */
         opacity: 1;
       }     
     .theme-scroll .theme-tab .text-value {

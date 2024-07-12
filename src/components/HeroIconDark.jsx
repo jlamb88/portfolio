@@ -1,9 +1,9 @@
 import './components.css'
 import React from 'react'
 
-export const HeroIconDark = () => {
+export const HeroIconDark = ({className="icon-text", id="jl-icon"}) => {
     return(
-<span className = "icon-text" id='jl-icon'>
+<span className = {className} id={id}>
 </span>
     )
 }

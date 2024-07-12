@@ -32,7 +32,7 @@ export const Portfolio = () => {
             </section>
             <div className="img-container">
                 <div className='overlay'></div>
-                <a href='https://jlamb88.github.io/ForeSome-GolfPlannerApp/'><ForesomeScreenshot className='foresome-img'/></a>
+                <a href='https://jlamb88.github.io/Foresome-Golf-Planner'><ForesomeScreenshot className='foresome-img'/></a>
             </div>
         </section>
         <section className='empire'>

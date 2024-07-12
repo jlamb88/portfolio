@@ -6,6 +6,7 @@ export const Landing = () => {
         <section className="landing">
             <span className="hero-text">Full stack development</span>
             <span className="HTML-text-flourish">&lt;HTML&gt;</span>
+            <span className="button-text-flourish">&lt;button&gt;</span>
             <HeroIconDark/>
             <section className="button-panel">
                 <a href='#portfolio'><PortfolioButton /></a>

@@ -148,11 +148,13 @@ body {
   position: relative;
   font-size: var(--fs-base);
   background-color: var(--background-color);
+  margin: 0px;
 }
 
 .container {
   display: grid;
-  grid-template-areas:"themeScroll main contactScroll";
+  grid-template-areas:"themeScroll main contactScroll"
+                        "contact contact contact";
   grid-template-columns: 40px auto 40px;
   width: 100%;
   height: 100vh; /* Ensure the container takes up the full height of the viewport */
@@ -196,11 +198,10 @@ body {
     position: absolute;
     right: clamp(100px, 15vw, 250px);
     bottom: 75px;
-    width: 285px;
+    width: 300px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
   }
   .landing .HTML-text-flourish {
     color: #ffffff80;
@@ -214,6 +215,20 @@ body {
     position: absolute;
     top: 82px;
     width: 108px;
+  }
+  .landing .button-text-flourish {
+    position: absolute;
+    top: 485px;
+    left: 970px;
+    height: 100%;
+    color: #ffffff80;
+    opacity: 0.75;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Caveat", Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
   .landing .hero-icon-dark-instance {
     left: 0 !important;
@@ -265,7 +280,7 @@ body {
 }
   .about .about-button {
     height: 125px;
-    left: -90px;
+    left: 0px;
     opacity: 0.6;
     top: 275px;
     width: 215px;
@@ -427,8 +442,8 @@ body {
     .portfolio .portfolio-button {
       position: absolute;
       height: 125px;
-      right: 0px;
-      opacity: 0.4;
+      right: 30px;
+      opacity: 0.6;
       top: 575px;
       width: 400px;
       border-radius: 18.18px;
@@ -517,7 +532,6 @@ body {
       font-style: normal;
       font-weight: 400;
     }
-
     .portfolio .img-container {
       position: relative;
       margin-top:50px;
@@ -597,7 +611,6 @@ body {
       .foresome .title {
         text-align: right;
       }
-
       .foresome .overlay {
         position: relative;
         margin-top: 50px;
@@ -613,6 +626,7 @@ body {
         height: 550px;
         width: 1000px;
         object-fit: fill;
+        right:0px;
         }
   
     .empire {
@@ -635,15 +649,93 @@ body {
       .empire .empire-img, .empire .overlay {
         position: relative;
         margin-top: 50px;
-        height: 500px;
+        height: 460px;
         width: 965px;
       }
-
       .empire .empire-img {
         position: absolute;
-        /* left: 340px; */
+        left: 0px;
         object-fit: fill;
       }
+
+.contact {
+  background-color: rgba(67, 69, 119, 0.70);
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  grid-area: contact;
+  height: 250px;
+  color: var(--header-text-color)
+}
+  .contact .contact-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    margin: 25px 0 0 100px;
+  }
+  .contact .contact-title {
+    text-align: justify;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .contact .contact-row {
+    display: inline-flex;
+    padding-right: 12px;
+    align-items: center;
+    margin: 12px 12px 0px 12px
+
+  }
+  .contact .contact-icons {
+    margin: 4.5em 0 0 25em;
+  }
+  .contact .jl-icon {
+    width: 3.6rem;
+    height: 3.6rem;
+    font-family: 'Lato',Helvetica, Arial, san-serif;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid;
+    border-color: var(--header-text-color);
+    border-radius: 4px;
+    padding: 12px;
+  }
+  .contact #contact-jl::after {
+    content: 'JL';
+    opacity: 1
+  }
+  .contact .contact-desc {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+    margin-left: 12px;
+  }
+  .contact .contact-icons {
+    display: flex;
+    flex-direction: row;
+  }
+  .contact .contact-email {
+    margin-top: 4px;
+  }
+  .contact .contact-github {
+    margin-left: 6px;
+  }
+  .contact .contact-linkedin {
+    width: 4.2rem;
+    height: 4.2rem;
+    margin: 6px 0 0 12px;
+  }
+
 
   @keyframes slide-up {
     to {

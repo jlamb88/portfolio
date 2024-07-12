@@ -16,6 +16,7 @@ function App() {
             <About />
             <Portfolio />
           </div>
+          <Contact />
           <ContactScroll />
         </div>
       </ThemeProvider>
