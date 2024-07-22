@@ -4,7 +4,11 @@
     --indicator-size: calc(var(--toggle-height) - 2 * var(--toggle-padding));
 }
 
-.toggle input span {
+.toggle {
+    display: block;
+}
+
+.toggle span {
     appearance: none;
     position: relative;
     cursor: pointer;
@@ -16,8 +20,10 @@
     transition: 0.1s linear background;
 }
 
-.toggle .label {
-    display: none;
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .toggle .slider {

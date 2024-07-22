@@ -16,6 +16,8 @@
   --periwinkle-gray: #cdcde8;
   --shadow-blue: #8384ab;
   --dark-blue-haze: #737484;
+  --flourish-dark: #c0c0c0;
+  --flourish-light: #b9b9b9;
  
 
   --text-color: var(--black);
@@ -24,6 +26,7 @@
   --icon-color: var(--black);
   --background-color: var(--lightest-gray);
   --hover-color: var(--light-gray);
+  --flourish-text-color: var(--flourish-dark);
 
   --inverted-background-color: var(--dark-gray);
   --inverted-text-color: var(--white);
@@ -149,6 +152,7 @@ html {
   --icon-color: var(--black);
   --background-color: var(--lightest-gray);
   --hover-color: var(--light-gray);
+  --flourish-text-color: var(--flourish-light);
 
   --inverted-background-color: var(--dark-gray);
   --inverted-text-color: var(--white);
@@ -188,13 +192,22 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  
+}
+
+.App {
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  grid-template-areas:"main"
+                        "contact";
+  grid-template-rows: auto auto;
   min-height: 100vh;
   position: relative;
   font-size: var(--fs-base);
   background-color: var(--background-color);
   margin: 0px;
+
 }
 
 .container {
@@ -259,7 +272,7 @@ body {
     gap: 16px;
   }
   .landing .HTML-text-flourish {
-    color: #ffffff80;
+    color: var(--flourish-text-color);
     font-family: "Caveat", Helvetica;
     font-size: 28px;
     font-weight: 400;
@@ -274,11 +287,10 @@ body {
   .landing .button-text-flourish {
     position: absolute;
     top: 485px;
-    left: 970px;
+    left: 860px;
     height: 100%;
-    color: #ffffff80;
+    color: var(--flourish-text-color);
     opacity: 0.75;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Caveat", Arial, Helvetica, sans-serif;
     font-size: 28px;
     font-style: normal;
@@ -837,9 +849,9 @@ body {
 @keyframes contact-text-slide {
   0% {
   opacity: 0;
-  transform: translateY(500px)
+  transform: translateY(150px)
   }
-  30% {
+  50% {
     opacity: 0;
 
   }
@@ -865,7 +877,7 @@ body {
 .contact .contact-text {
   animation: contact-text-slide linear 600ms forwards ;
   animation-timeline: view();
-  animation-range: cover cover 60%;
+  animation-range: entry -300px;
 }
 
 .contact .contact-icons {
