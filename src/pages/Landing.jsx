@@ -1,8 +1,10 @@
 import React from "react";
 import { PortfolioButton, AboutButton, ContactButton, HeroIconDark} from "../components";
+import { useTheme } from '../context/themeProvider.jsx'
 
 export const Landing = () => {
-    return (
+
+    return ( 
         <section className="landing">
             <span className="hero-text">Full stack development</span>
             <span className="HTML-text-flourish">&lt;HTML&gt;</span>

@@ -1,24 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import { Landing, About, Portfolio, Contact } from './pages'
+import { Main, Contact } from './pages'
 import { ContactScroll, ThemeScroll } from './components'
-import { ThemeProvider } from './context/themeProvider'
+import { ThemeProvider, useTheme } from './context/themeProvider'
 
 
 function App() {
+
   return (
     <div className="App">
       <ThemeProvider>
-        <div className='container'>
-          <ThemeScroll />
-          <div className="main">
-            <Landing />
-            <About />
-            <Portfolio />
-          </div>
-          <Contact />
-          <ContactScroll />
-        </div>
+        <Main />
+        <Contact />
       </ThemeProvider>
     </div>
   );

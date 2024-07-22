@@ -7,12 +7,9 @@ export const ThemeToggle = () => {
     return (
         <div>
         <label className='toggle'>
-        <input type="checkbox" label={theme} onClick={toggleTheme}>
-            {/* ::before */}
-            <span></span>
-        </input>
+        <input type="checkbox" label={theme} onClick={toggleTheme}/>
+        <span className="slider"></span>
         </label>
         </div>
     )
-
 }

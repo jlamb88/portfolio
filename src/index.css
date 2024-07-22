@@ -2,7 +2,7 @@
 
 :root {
   --white: #FFFFFF;
-  --lightest-gray: #FAFAFA;
+  --lightest-gray: #fffffff5;
   --light-gray: #cdcde8;
   --dark-gray: #4D4D4D;
   --darkest-gray: #454545;
@@ -15,6 +15,7 @@
   --mystic: #e3e8f0;
   --periwinkle-gray: #cdcde8;
   --shadow-blue: #8384ab;
+  --dark-blue-haze: #737484;
  
 
   --text-color: var(--black);
@@ -141,6 +142,51 @@ html {
   }
 }
 
+[data-theme="light"] {
+  --text-color: var(--dark-gray);
+  --weak-text-color: var(--dark-gray);
+  --link-color: var(--primary);
+  --icon-color: var(--black);
+  --background-color: var(--lightest-gray);
+  --hover-color: var(--light-gray);
+
+  --inverted-background-color: var(--dark-gray);
+  --inverted-text-color: var(--white);
+
+  --background-text: var(--text-color);
+
+  --weak-border-color: var(--light-gray);
+  --border-color: var(--dark-gray);
+
+  --header-background-color: var(--primary);
+  --header-text-color: var(--dark-blue-haze);
+
+  --card-background-color: var(--lightest-gray);
+  --toggle-background-off: var(--light-gray);
+  --toggle-background-on: var(--dark-gray);
+
+  --button-background-color: var(--primary);
+  --button-border-color: var(--primary);
+  --button-text-color: var(--white);
+  --button-alert-color: var(--alert);
+
+
+  --flash-background-color: var(--primary);
+  --flash-text-color: var(--white);
+  --flash-alert-color: var(--alert);
+
+  --box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  --inset-box-shadow: 0 1px 3px rgba(0, 0, 0, .14) inset;
+
+  --dropdown-menu-background: var(--white);
+
+  --about-text: var(--dark-gray);
+}
+
+[data-theme="dark"] {
+--about-text: var(--mystic)
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -153,22 +199,31 @@ body {
 
 .container {
   display: grid;
-  grid-template-areas:"themeScroll main contactScroll"
-                        "contact contact contact";
-  grid-template-columns: 40px auto 40px;
-  width: 100%;
+  grid-template-areas:"main"
+                        "contact";
+  grid-template-rows: auto auto;
+  /* width: 100%; */
   height: 100vh; /* Ensure the container takes up the full height of the viewport */
 }
 
 .main {
   grid-area: main;
+  grid-template-areas: "themeScroll content contactScroll";
+  grid-template-columns: 40px auto 40px;
+  display: grid;
+  background-color:var(--background-color);
+}
+
+.content {
+  display: inline-grid;
+  grid-template-rows: max-content max-content max-content;
 }
 
 .landing {
   height: 800px;
   overflow: hidden;
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 .landing-overlay {
   position: fixed;
@@ -310,6 +365,9 @@ body {
     top: 80px;
     white-space: nowrap;
   }
+  [data-theme="light"] .about .about-button {
+  opacity: 1;
+}
   .about .background-box {
     height: 100%;
     right: clamp(100px, 15vw, 250px);
@@ -318,7 +376,7 @@ body {
     width: 935px;
     min-width: 600px;
     position: absolute;
-    color: var(--background-text);
+    color: var(--about-text);
     font-family: "Montserrat", helvetica;
     align-items: flex-start;
     background-color: transparent;
@@ -413,18 +471,28 @@ body {
       font-weight: 600;
       padding: 10px;
       transition: 0.2s ease-out;
+      animation: tile-jump linear;
     }
   
     .skills-card:hover {
       transform: translate(-5px, -5px) scale(1.1)
     }
 
-    /* .skills-card:nth-child(n) {
-      animation-delay: calc(0.2s * (n - 1)); /* Adjust the delay calculation as needed
-      } */
+    .skills-card:nth-child(1) {
+      animation-delay: calc(0.2s * (1 - 1)); /* Adjust the delay calculation as needed */
+      }
+      .skills-card:nth-child(2) {
+        animation-delay: calc(0.2s * (2 - 1)); /* Adjust the delay calculation as needed */
+        }
+        .skills-card:nth-child(3) {
+          animation-delay: calc(0.2s * (3 - 1)); /* Adjust the delay calculation as needed */
+          }
+          .skills-card:nth-child(4) {
+            animation-delay: calc(0.2s * (4 - 1)); /* Adjust the delay calculation as needed */
+            }
 
   .portfolio { 
-    width: 100vw;
+    width: 100%;
     position: relative;
     display: inline-grid;
     grid-template-columns: 1fr;
@@ -457,6 +525,9 @@ body {
       bottom: 15px;
       left: 225px;
     }
+    [data-theme="light"] .portfolio .portfolio-button {
+      opacity: 0.9;
+    }
     .portfolio .info {
       background-color: transparent;
       height: 250px;
@@ -464,6 +535,10 @@ body {
       display: flex;
       flex-direction: column;
       z-index: 9999;
+      margin-top: 100px;
+    }
+    [data-theme="light"] .portfolio .info {
+      color: var(--dark-blue-haze);
     }
     .portfolio .heading {
       height: auto;
@@ -497,15 +572,15 @@ body {
       font-style: normal;
       font-weight: 700;
     }
-    .portfolio .desc {
+    .portfolio .description-box {
       top: 8px;
       left: 0px;
       position: relative;
-      width: 330px;
+      width: 340px;
       background-color: #999ab1f2;
       height: 165px;
     }
-    .portfolio .desc-text{
+    .portfolio .description-text{
       display: block;
       background-color: transparent;
       color: var(--mystic);
@@ -521,7 +596,7 @@ body {
       top: 20px;
       width: 285px;
     }
-    .portfolio .tech {
+    .portfolio .technology {
       position: relative;
       text-align: left;
       top: 16px;
@@ -534,7 +609,6 @@ body {
     }
     .portfolio .img-container {
       position: relative;
-      margin-top:50px;
       height: 100%;
       display: flex;
     }
@@ -568,7 +642,6 @@ body {
       .weatherNow .info {
         left: 50px;
         position: relative;
-        margin-top: 65px;
         z-index: 9999;
       }
       .weatherNow .overlay {
@@ -595,14 +668,13 @@ body {
       height: auto;
       grid-row: 2/3;
       display: flex;
-      flex-direction: row-reverse;
     }
       .foresome .info {
         display: flex;
         flex-direction: column;
-        right: 225px;
+        right: 80px;
         position: relative;
-        margin-top: 65px;
+        margin-top: 100px;
         z-index: 9999;
         text-align: right;
         align-items: flex-end;
@@ -611,6 +683,9 @@ body {
       .foresome .title {
         text-align: right;
       }
+      .foresome .description-text {
+        left: 40px;
+      }
       .foresome .overlay {
         position: relative;
         margin-top: 50px;
@@ -618,7 +693,7 @@ body {
         width: 1000px;
       }
       .foresome .img-container {
-        right: 80px;
+        left: 50px;
       }
       .foresome .foresome-img {
         position: absolute;
@@ -626,7 +701,7 @@ body {
         height: 550px;
         width: 1000px;
         object-fit: fill;
-        right:0px;
+        left: 0px;
         }
   
     .empire {
@@ -640,7 +715,7 @@ body {
       .empire .info {
         left: 50px;
         position: relative;
-        margin-top: 65px;
+        margin-top: 100px;
         z-index: 9999;
       }
       .empire .info .tech {
@@ -673,6 +748,7 @@ body {
     flex-direction: column;
     width: 550px;
     margin: 25px 0 0 100px;
+    opacity: 0;
   }
   .contact .contact-title {
     text-align: justify;
@@ -737,15 +813,67 @@ body {
   }
 
 
-  @keyframes slide-up {
+/* @keyframes slide-up {
     to {
-        bottom: 0; /* Slide each row up to the final position */
+        bottom: 0; /* Slide each row up to the final position
     }
 }
 
 @keyframes card-slide {
     to {
-        opacity: 1; /* Fade in each card as it slides up */
+        opacity: 1; /* Fade in each card as it slides up 
     }
+} */
+
+@keyframes tile-jump {
+  50% {
+    transform: translate(-10px) scale(1.1)
+  }
+  100% {
+    transform: translate(0) scale(1)
+  }
 }
-  
+
+@keyframes contact-text-slide {
+  0% {
+  opacity: 0;
+  transform: translateY(500px)
+  }
+  30% {
+    opacity: 0;
+
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes contact-icons-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1
+  }
+}
+.contact .contact-text {
+  animation: contact-text-slide linear 600ms forwards ;
+  animation-timeline: view();
+  animation-range: cover cover 60%;
+}
+
+.contact .contact-icons {
+  animation: contact-icons-slide linear 600ms;
+  animation-timeline: view();
+  animation-range: entry -25px;
+}
+.skills-box .skills-card {
+  animation-timeline: view();
+  animation-range: cover;
+}

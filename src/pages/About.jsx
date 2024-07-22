@@ -1,8 +1,8 @@
-import React from 'react'
+
 import { AboutButton} from '../components'
-import styles from '../index.css'
 
 export const About = () => {
+   
  return (
     <section className = 'about' id='about'>
         <AboutButton className="about-button"/>

@@ -1,16 +1,14 @@
-.toggle input span {
-    --toggle-height: 2rem;
+:root {--toggle-height: 2rem;
     --toggle-width: calc(1.8 * var(--toggle-height));
     --toggle-padding: calc(var(--toggle-height) / 8);
     --indicator-size: calc(var(--toggle-height) - 2 * var(--toggle-padding));
+}
+
+.toggle input span {
     appearance: none;
     position: relative;
     cursor: pointer;
-
-    height: var(--toggle-height);
-    width: var(--toggle-width);
-    background: var(--toggle-background-off);
-    padding: var(--toggle-padding);
+    
     border-radius: var(--toggle-height);
     border: none;
     box-shadow: var(--inset-box-shadow);
@@ -18,25 +16,38 @@
     transition: 0.1s linear background;
 }
 
-.toggle span:before {
-    content: '';
-    display: block;
+.toggle .label {
+    display: none;
+}
+
+.toggle .slider {
+    cursor: pointer;
+    background-color: var(--toggle-background-off);
+    transition: 0.1s linear background;
+    border-radius: var(--toggle-height);
+    height: var(--toggle-height);
+    width: var(--toggle-width);
+    background: var(--toggle-background-off);
+    padding: var(--toggle-padding);
+  }
+  
+  .toggle .slider:before {
+    content: "";
     position: absolute;
-    top: var(--toggle-padding);
-    left: var(--toggle-padding);
-    width: var(--indicator-size);
     height: var(--indicator-size);
-    background: var(--background-color);
-    border-radius: var(--indicator-size);
+    width: var(--indicator-size);
+    left: var(--toggle-padding);
+    bottom: var(--toggle-padding);
+    background-color: var(--background-color);
     transition: 0.1s linear transform;
-    transform: translateX(0);
+    border-radius: 50%;
     box-shadow: var(--box-shadow);
-}
-
-.toggle input:checked {
+  }
+/*   
+  .toggle input:checked + .slider {
     background-color: var(--toggle-background-on);
-}
-
-.toggle input:checked:before {
+  } */
+  
+  .toggle input:checked + .slider:before {
     transform: translateX(calc(var(--toggle-width) - var(--indicator-size) - 2 * var(--toggle-padding)));
-}
+  }

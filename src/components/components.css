@@ -62,7 +62,12 @@
         top: 65px;
         left: 80px;
 }
-    
+
+
+.about-button [data-theme="dark"] {
+    opacity: 0.9;
+  }
+  
 .contact-button {
     background-color: #119da4;
     border-radius: 13px;
