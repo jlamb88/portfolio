@@ -1,4 +1,3 @@
-import './App.css';
 import { Main, Contact } from './pages'
 import { ThemeProvider } from './context/themeProvider'
 

@@ -4,6 +4,7 @@
   --white: #FFFFFF;
   --lightest-gray: #fffffff5;
   --light-gray: #cdcde8;
+  --gray: #868686;
   --dark-gray: #4D4D4D;
   --darkest-gray: #454545;
   --black: #333333;
@@ -15,7 +16,7 @@
   --mystic: #e3e8f0;
   --periwinkle-gray: #cdcde8;
   --shadow-blue: #8384ab;
-  --dark-blue-haze: #737484;
+  --dark-blue-haze: #60638f;
   --flourish-dark: #c0c0c0;
   --flourish-light: #b9b9b9;
  
@@ -107,19 +108,27 @@
   }
 }
 
+@media screen and (max-width: 800px) {
+  :root {
+      --header-height: 4rem;
+      --body-padding: 1rem;
+  }
+}
+
 html {
   accent-color: var(--primary);
   font-size: 62.5%;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root { */
-  [data-theme="dark"] {
+[data-theme="dark"] {
       --text-color: var(--light-gray);
       --weak-text-color: var(--lightest-gray);
       --link-color: var(--light-gray);
       --icon-color: var(--light-gray);
       --hover-color: var(--darkest-gray);
+      --flourish-text-color: var(--flourish-dark);
+      --about-text: var(--mystic);
+      --theme-text: var(--dark-gray);
 
       --inverted-background-color: var(--lightest-gray); 
 
@@ -134,17 +143,11 @@ html {
 
       --card-background-color: var(--darkest-gray);
       --dropdown-menu-background: var(--black);
-      --toggle-background-off: var(--dark-gray);
+      --toggle-background-off: var(--lightest-gray);
 
   }
 
 
-@media screen and (max-width: 800px) {
-  :root {
-      --header-height: 4rem;
-      --body-padding: 1rem;
-  }
-}
 
 [data-theme="light"] {
   --text-color: var(--dark-blue-haze);
@@ -155,6 +158,7 @@ html {
   --hover-color: var(--light-gray);
   --flourish-text-color: var(--flourish-light);
   --about-text: var(--shadow-blue);
+  --theme-text: var(--gray);
 
   --inverted-background-color: var(--dark-gray);
   --inverted-text-color: var(--white);
@@ -197,8 +201,6 @@ body, html, #root, .App {
 }
 
 .App {
-  /* display: flex;
-  flex-direction: column; */
   display: grid;
   grid-template-areas:"main"
                         "contact";
@@ -207,16 +209,6 @@ body, html, #root, .App {
   position: relative;
   font-size: var(--fs-base);
   margin: 0px;
-
-}
-
-.container {
-  display: grid;
-  grid-template-areas:"main"
-                        "contact";
-  grid-template-rows: auto auto;
-  /* width: 100%; */
-  height: 100vh; /* Ensure the container takes up the full height of the viewport */
 }
 
 .main {
@@ -614,13 +606,13 @@ body, html, #root, .App {
       font-family: 'Lato', Arial, Helvetica, sans-serif;
       font-size: var(--fs-base);
       font-style: normal;
-      font-weight: 400;
+      font-weight: 500;
     }
     [data-theme="light"] .portfolio .title {
       color: var(--dark-blue-haze);
     }
     [data-theme="light"] .portfolio .technology {
-      color: var(--header-text-color);
+      color: var(--dark-blue-haze);
     }
     .portfolio .img-container {
       position: relative;
@@ -843,7 +835,7 @@ body, html, #root, .App {
 
 @keyframes tile-jump {
   50% {
-    transform: translate(-10px) scale(1.1)
+    transform: translate(-20px) scale(1.12)
   }
   100% {
     transform: translate(0) scale(1)

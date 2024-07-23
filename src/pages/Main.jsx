@@ -14,8 +14,9 @@ export const Main = () => {
 		<Landing />
 		<About />
 		<Portfolio />
-	  </div>
-	  <ContactScroll />
+		<ContactScroll />
+		</div>
+	  {/* <ContactScroll /> */}
 	</div>
   )
 }
