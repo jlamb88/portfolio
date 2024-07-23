@@ -6,7 +6,7 @@ export const Portfolio = () => {
     return (
         <section className="portfolio" id="portfolio">
             
-        <PortfolioButton className="port-button"/>
+        {/* <PortfolioButton className="port-button"/> */}
         <section className='weatherNow'>
             <section className="info">
                 <span className ='heading'>Featured Project</span>

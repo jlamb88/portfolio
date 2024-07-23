@@ -27,6 +27,7 @@
   --background-color: var(--lightest-gray);
   --hover-color: var(--light-gray);
   --flourish-text-color: var(--flourish-dark);
+  --about-text: var(--mystic);
 
   --inverted-background-color: var(--dark-gray);
   --inverted-text-color: var(--white);
@@ -47,7 +48,6 @@
   --button-border-color: var(--primary);
   --button-text-color: var(--white);
   --button-alert-color: var(--alert);
-
 
   --flash-background-color: var(--primary);
   --flash-text-color: var(--white);
@@ -112,8 +112,9 @@ html {
   font-size: 62.5%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+/* @media (prefers-color-scheme: dark) {
+  :root { */
+  [data-theme="dark"] {
       --text-color: var(--light-gray);
       --weak-text-color: var(--lightest-gray);
       --link-color: var(--light-gray);
@@ -136,7 +137,7 @@ html {
       --toggle-background-off: var(--dark-gray);
 
   }
-}
+
 
 @media screen and (max-width: 800px) {
   :root {
@@ -146,13 +147,14 @@ html {
 }
 
 [data-theme="light"] {
-  --text-color: var(--dark-gray);
+  --text-color: var(--dark-blue-haze);
   --weak-text-color: var(--dark-gray);
   --link-color: var(--primary);
   --icon-color: var(--black);
   --background-color: var(--lightest-gray);
   --hover-color: var(--light-gray);
   --flourish-text-color: var(--flourish-light);
+  --about-text: var(--shadow-blue);
 
   --inverted-background-color: var(--dark-gray);
   --inverted-text-color: var(--white);
@@ -184,15 +186,14 @@ html {
 
   --dropdown-menu-background: var(--white);
 
-  --about-text: var(--dark-gray);
 }
 
-[data-theme="dark"] {
---about-text: var(--mystic)
-}
 
-body {
-  
+body, html, #root, .App {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .App {
@@ -205,7 +206,6 @@ body {
   min-height: 100vh;
   position: relative;
   font-size: var(--fs-base);
-  background-color: var(--background-color);
   margin: 0px;
 
 }
@@ -222,7 +222,7 @@ body {
 .main {
   grid-area: main;
   grid-template-areas: "themeScroll content contactScroll";
-  grid-template-columns: 40px auto 40px;
+  grid-template-columns: 40px 1fr 60px;
   display: grid;
   background-color:var(--background-color);
 }
@@ -347,7 +347,7 @@ body {
 }
   .about .about-button {
     height: 125px;
-    left: 0px;
+    left: 15px;
     opacity: 0.6;
     top: 275px;
     width: 215px;
@@ -388,7 +388,6 @@ body {
     width: 935px;
     min-width: 600px;
     position: absolute;
-    color: var(--about-text);
     font-family: "Montserrat", helvetica;
     align-items: flex-start;
     background-color: transparent;
@@ -400,6 +399,7 @@ body {
       font-size: var(--fs-md);
       font-style: normal;
       font-weight: 700;
+      color: var(--about-text);
       height: auto;
       position: absolute;
       right: 8px;
@@ -433,7 +433,7 @@ body {
       line-height: normal;
       position: relative;
       text-align: right;
-      color: var(--mystic);
+      color: var(--about-text);
       font-style: normal;
       font-weight: 400;
   }
@@ -549,9 +549,6 @@ body {
       z-index: 9999;
       margin-top: 100px;
     }
-    [data-theme="light"] .portfolio .info {
-      color: var(--dark-blue-haze);
-    }
     .portfolio .heading {
       height: auto;
       letter-spacing: 0.00px;
@@ -618,6 +615,12 @@ body {
       font-size: var(--fs-base);
       font-style: normal;
       font-weight: 400;
+    }
+    [data-theme="light"] .portfolio .title {
+      color: var(--dark-blue-haze);
+    }
+    [data-theme="light"] .portfolio .technology {
+      color: var(--header-text-color);
     }
     .portfolio .img-container {
       position: relative;
@@ -746,7 +749,8 @@ body {
       }
 
 .contact {
-  background-color: rgba(67, 69, 119, 0.70);
+  background-color: 
+  #434577;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -864,7 +868,7 @@ body {
 @keyframes contact-icons-slide {
   0% {
     opacity: 0;
-    transform: translateX(500px);
+    transform: translateX(150px);
   }
   30% {
     opacity: 0;

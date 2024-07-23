@@ -67,7 +67,7 @@
 .about-button [data-theme="dark"] {
     opacity: 0.9;
   }
-  
+
 .contact-button {
     background-color: #119da4;
     border-radius: 13px;
@@ -164,19 +164,20 @@
     flex-direction: column;
     grid-area: contactScroll;
     background-color: transparent;
-    width: 40px;
-    position: sticky;
     z-index: 10;
-    /* height: 100vh; */
+    height: 100vh;
     min-height: 700px;
     height: auto;
-    justify-content:flex-end;
+    justify-content: flex-end;
     }
     .contact-scroll ul {
         display: flex;
+        position: sticky;
+        bottom: 0px;
+        right: 20px;
+        margin: 80px 0px 0px 0px;
         flex-direction: column;
         align-items: center;
-        margin: 0px;
         padding: 0px;
         list-style: none;
     }
@@ -196,7 +197,6 @@
         letter-spacing: 0px;
         line-height: normal;
         text-align: left;
-        /* transform: rotate(90.00deg); */
         writing-mode: vertical-rl;
     }
     .contact-scroll .email-wrapper {
@@ -218,38 +218,27 @@
 .theme-scroll {
     display: flex;
     flex-direction: column;
-    grid-area: themeScroll;
     justify-content: flex-end;
+    grid-area: themeScroll;
+    width:40px;
     background-color: transparent;
-    min-height: 800px;
-    max-width: 60px;
-    position: sticky;
-    margin-bottom: 60px;
-    left: -12px; 
-    right: auto;
     z-index: 9999; 
-    }
-    .theme-scroll .bumper {
-        position: relative;
-        top: 0px;
-        min-height: 800px;
-        width: 60px;
-        flex:0 0 auto;
-        background-color: transparent;
     }
     .theme-scroll ul {
         display: flex;
+        position: sticky;
+        bottom: 60px;
+        margin: 400px 0 60px;
         flex-direction: column;
-        align-items: center;
-        margin: 0px;
+        align-items: left;
         padding: 0px;
         list-style: none;
     }
     .theme-scroll li {
-        padding: 8px;
+        padding: 8px 0;
     }
     .theme-scroll .theme-text-flourish {
-        color: #ffffff99;
+        color: var(--flourish-text-color);
         font-family: "Caveat", Helvetica;
         font-size: 28px;
         font-weight: 400;
@@ -270,7 +259,7 @@
         opacity: 1;
       }     
     .theme-scroll .theme-tab .text-value {
-        color: #ffffffb2;
+        color: var(--dark-gray);
         font-family: "Content", Helvetica;
         font-size: 20px;
         font-weight: 400;

@@ -1,7 +1,6 @@
 import './App.css';
 import { Main, Contact } from './pages'
-import { ContactScroll, ThemeScroll } from './components'
-import { ThemeProvider, useTheme } from './context/themeProvider'
+import { ThemeProvider } from './context/themeProvider'
 
 
 function App() {

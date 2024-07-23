@@ -5,19 +5,24 @@
 }
 
 .toggle {
-    display: block;
+    display: flex;
 }
 
 .toggle span {
     appearance: none;
     position: relative;
     cursor: pointer;
+
+    top: 20px;
+    right: 5px;
     
     border-radius: var(--toggle-height);
     border: none;
     box-shadow: var(--inset-box-shadow);
 
     transition: 0.1s linear background;
+
+    transform: rotate(90deg);
 }
 
 .toggle input {
@@ -33,7 +38,6 @@
     border-radius: var(--toggle-height);
     height: var(--toggle-height);
     width: var(--toggle-width);
-    background: var(--toggle-background-off);
     padding: var(--toggle-padding);
   }
   
