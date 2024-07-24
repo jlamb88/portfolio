@@ -213,14 +213,18 @@ body, html, #root, .App {
 
 .main {
   grid-area: main;
-  grid-template-areas: "themeScroll content contactScroll";
-  grid-template-columns: 40px 1fr 60px;
+  grid-template-areas: "themeScroll content";
+  grid-template-columns: 40px 1fr;
   display: grid;
   background-color:var(--background-color);
 }
 
 .content {
   display: inline-grid;
+  grid-template-columns: auto 60px;
+  grid-template-areas: "landing contactScroll"
+  "about contactScroll"
+  "portfolio contactScroll";
   grid-template-rows: max-content max-content max-content;
 }
 
@@ -228,7 +232,7 @@ body, html, #root, .App {
   height: 800px;
   overflow: hidden;
   position: relative;
-  width: 100%;
+  grid-area: landing;
 }
 .landing-overlay {
   position: fixed;
@@ -333,9 +337,9 @@ body, html, #root, .App {
 
 .about {
   height: 850px;
-  width: 100vw;
   overflow: visible;
   position: relative;
+  grid-area: about;
 }
   .about .about-button {
     height: 125px;
@@ -496,14 +500,13 @@ body, html, #root, .App {
             }
 
   .portfolio { 
-    width: 100%;
     position: relative;
     display: inline-grid;
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     row-gap: 100px;
     height: auto;
-    overflow: visible;
+    grid-area: portfolio;
   }
     .portfolio > *:last-child {
     margin-bottom: 80px;
@@ -639,7 +642,6 @@ body, html, #root, .App {
 
     .weatherNow {
       position: relative;
-      width: 100vw;
       height: auto;
       grid-row: 1/2;
       display: flex;
@@ -671,7 +673,6 @@ body, html, #root, .App {
     
     .foresome {
       position: relative;
-      width: 100vw;
       height: auto;
       grid-row: 2/3;
       display: flex;
@@ -713,7 +714,6 @@ body, html, #root, .App {
   
     .empire {
         position: relative;
-        width: 100vw;
         height: 100%;
         grid-row:3/4;
         display: flex;
