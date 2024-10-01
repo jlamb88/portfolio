@@ -16,7 +16,6 @@ export const Main = () => {
 		<Portfolio />
 		<ContactScroll />
 		</div>
-	  {/* <ContactScroll /> */}
 	</div>
   )
 }

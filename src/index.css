@@ -63,6 +63,13 @@
   --body-padding: 2rem;
   --footer-height: 16rem;
   --nav-width: 16rem;
+
+  --email-width: 70px;
+  --email-height: 70px;
+  --github-width: 65px;
+  --github-height: 65px;
+  --linked-width: 55px;
+  --linked-height: 55px;
 }
 
 
@@ -108,12 +115,7 @@
   }
 }
 
-@media screen and (max-width: 800px) {
-  :root {
-      --header-height: 4rem;
-      --body-padding: 1rem;
-  }
-}
+
 
 html {
   accent-color: var(--primary);
@@ -200,6 +202,10 @@ body, html, #root, .App {
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .App {
   display: grid;
   grid-template-areas:"main"
@@ -225,11 +231,11 @@ body, html, #root, .App {
   grid-template-areas: "landing contactScroll"
   "about contactScroll"
   "portfolio contactScroll";
-  grid-template-rows: max-content max-content max-content;
+  grid-template-rows: max-content max-content;
 }
 
 .landing {
-  height: 800px;
+  height: 1000px;
   overflow: hidden;
   position: relative;
   grid-area: landing;
@@ -249,7 +255,7 @@ body, html, #root, .App {
   .landing .hero-text {
     color: var(--text-color);
     font-family: "Montserrat", Helvetica;
-    font-size: 39.4px;
+    font-size: 4.0rem;
     font-weight: 400;
     left: 435px;
     letter-spacing: -1px;
@@ -258,11 +264,13 @@ body, html, #root, .App {
     top: 346px;
     width: 479px;
   }
-  .landing .button-panel {
+  .landing .buttons {
     position: absolute;
     right: clamp(100px, 15vw, 250px);
-    bottom: 75px;
+    bottom: 125px;
     width: 300px;
+  }
+  .landing .button-panel {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
@@ -275,18 +283,18 @@ body, html, #root, .App {
     left: 28px;
     letter-spacing: 0;
     line-height: normal;
-    opacity: 0.75;
+    opacity: 0.4;
     position: absolute;
     top: 82px;
     width: 108px;
   }
   .landing .button-text-flourish {
-    position: absolute;
-    top: 485px;
-    left: 860px;
-    height: 100%;
+    position: relative;
+    left: -20px;
+    bottom: 15px;
+    height: auto;
     color: var(--flourish-text-color);
-    opacity: 0.75;
+    opacity: 0.4;
     font-family: "Caveat", Arial, Helvetica, sans-serif;
     font-size: 28px;
     font-style: normal;
@@ -335,6 +343,10 @@ body, html, #root, .App {
     width: 54px;
 }
 
+.landing .mobile-theme {
+  display: none;
+}
+
 .about {
   height: 850px;
   overflow: visible;
@@ -342,8 +354,9 @@ body, html, #root, .App {
   grid-area: about;
 }
   .about .about-button {
+    position: absolute;
     height: 125px;
-    left: 15px;
+    left: -60px;
     opacity: 0.6;
     top: 275px;
     width: 215px;
@@ -354,7 +367,7 @@ body, html, #root, .App {
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
-    left: 90px;
+    left: 50px;
     text-shadow: 1.2px 7.5px 10px #9fdfee;
     /* top: 20px; */
     width: 30px;
@@ -376,76 +389,71 @@ body, html, #root, .App {
   [data-theme="light"] .about .about-button {
   opacity: 1;
 }
+  .mobile-heading {
+    display: none;
+  }
   .about .background-box {
-    height: 100%;
-    right: clamp(100px, 15vw, 250px);
+    height: auto;
+    left: 325px;
+    right: clamp(50px, 10vw, 250px);
+    margin-top: 100px;
     /* overflow: hidden; */
-    top: 125px;
-    width: 935px;
-    min-width: 600px;
-    position: absolute;
+    width: 100%;
+    max-width: 950px;
+    position: relative;
     font-family: "Montserrat", helvetica;
-    align-items: flex-start;
+    align-items: flex-end;
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    gap: 2px;
   }
     .background-box .title {
       font-size: var(--fs-md);
       font-style: normal;
       font-weight: 700;
-      color: var(--about-text);
+      color: var(--text-color);
       height: auto;
-      position: absolute;
-      right: 8px;
+      position: relative;
       letter-spacing: 0px;
       line-height: normal;
       text-align: right;
-      top: 0px;
-      width: 210px;
+      width: 100%;
     }
     .background-box .text1 {
       height: auto;
-      right: 0px;
       position: relative;
-      top: 40px;
-      width: 925px;
+      width: 100%;
     }
     .background-box .text2 {
       background-color: transparent;
       height: auto;
-      left: 450px;
       letter-spacing: 0.00px;
       line-height: normal;
       position: relative;
-      top: 40px;
-      width: 475px;
+      max-width: 525px;
     }
     .background-box p {
       align-self: stretch;
-      background-color: transparent;
-      letter-spacing: 0.00px;
-      line-height: normal;
-      position: relative;
       text-align: right;
       color: var(--about-text);
-      font-style: normal;
-      font-weight: 400;
+      margin-top: 0px;
   }
+    [data-theme="light"] .background-box p {
+      font-weight: 600;
+    }
   .about .skills-box {
     position: absolute;
     height: auto;
-    left: 240px;
+    left: 275px;
     overflow: visible;
-    top: 425px;
+    top: 400px;
     width: 400px;
     display: flex;
     flex-direction: column;
     z-index: 10;
   }
     .skills-box .title {
-      color: var(--white);
+      color: var(--text-color);
       font-family: "Montserrat";
       font-size: var(--fs-md);
       font-style: normal;
@@ -469,15 +477,14 @@ body, html, #root, .App {
     .skills-box .skills-card {
       background-color: #8384ab;
       border-radius: 6.75px;
-      height: 24px;
+      height: auto;
       width: auto;
-      min-width: 40px;
       color: var(--white);
       font-family: "Montserrat", Helvetica;
       font-size: var(--fs-base);
       font-style: normal;
       font-weight: 600;
-      padding: 10px;
+      padding: 0.6em;
       transition: 0.2s ease-out;
       animation: tile-jump linear;
     }
@@ -504,15 +511,15 @@ body, html, #root, .App {
     display: inline-grid;
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
-    row-gap: 100px;
+    row-gap: 185px;
     height: auto;
     grid-area: portfolio;
   }
     .portfolio > *:last-child {
-    margin-bottom: 80px;
+    margin-bottom: 150px;
     }
-    .portfolio a {
-      text-decoration: none;
+    .portfolio .mobile-heading {
+      grid-row: 1/2;
     }
     .portfolio .portfolio-button {
       position: absolute;
@@ -536,40 +543,38 @@ body, html, #root, .App {
       opacity: 0.9;
     }
     .portfolio .info {
+      position: relative;
       background-color: transparent;
-      height: 250px;
-      width: 340px;
+      height: auto;
+      max-width: 340px;
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       z-index: 9999;
       margin-top: 100px;
+      margin-left: 75px;
     }
     .portfolio .heading {
       height: auto;
       letter-spacing: 0.00px;
       line-height: normal;
       position: relative;
-      top: 0px;
-      left: 0px;
       text-align: left;
-      width: 175px;
       color: var(--header-text-color);
       font-family: 'Inter', Arial, Helvetica, sans-serif;
-      font-size: var(--fs-s);
+      font-size: var(--fs-sm);
       font-style: normal;
       font-weight: 400;
     }
     .portfolio .title {
       background-color: transparent;
       height: auto;
-      left: 0px;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
       position: relative;
       text-align: left;
-      top: 6px;
-      width: 100%;
+      margin-top: 6px;
       color: var(--blue-haze);
       font-family: 'Montserrat', Arial, Helvetica, sans-serif;
       font-size: var(--fs-lg);
@@ -577,9 +582,8 @@ body, html, #root, .App {
       font-weight: 700;
     }
     .portfolio .description-box {
-      top: 8px;
-      left: 0px;
-      position: relative;
+      position: absolute;
+      top: 72px;
       width: 340px;
       background-color: #999ab1f2;
       height: 165px;
@@ -589,27 +593,29 @@ body, html, #root, .App {
       background-color: transparent;
       color: var(--mystic);
       font-weight: 500;
-      height: auto;
+      height: 155px;
       letter-spacing: 0.00px;
       line-height: 20px;
       position: relative;
       text-align: left;
       font-family: 'Lato', Arial, Helvetica, sans-serif;
       font-size: var(--fs-sm);
-      left: 20px;
-      top: 20px;
+      margin:  25px 0 0 30px;
       width: 285px;
     }
     .portfolio .technology {
       position: relative;
       text-align: left;
-      top: 16px;
+      margin-top: 15px;
       left: 0px;
       color: var(--mystic);
       font-family: 'Lato', Arial, Helvetica, sans-serif;
       font-size: var(--fs-base);
       font-style: normal;
       font-weight: 500;
+    }
+    .portfolio .mobile-icons {
+      display: none;
     }
     [data-theme="light"] .portfolio .title {
       color: var(--dark-blue-haze);
@@ -619,143 +625,132 @@ body, html, #root, .App {
     }
     .portfolio .img-container {
       position: relative;
-      height: 100%;
+      height: auto;
+      width: 100%;
       display: flex;
-    }
-    .portfolio .img-container:hover .overlay{
-      opacity: 0;
-      visibility: hidden;
-      transform: scale(1.05);
-      }
-    .portfolio .img-container img {
+      opacity: 0.6;
+      max-width: 970px;
       transition: 0.2s ease-in;
     }
-    .portfolio .img-container:hover img {
-      transform: scale(1.05)
+    .portfolio .img-container:hover {
+      opacity: 1;
+      transform: scale(1.05);
+      }
+    
+    [data-theme="light"] .portfolio .img-container{
+      opacity: 0.8;
     }
-    .portfolio .overlay{
-      opacity: 0.4;
-      z-index: 9000;
-      background-color: #50529d;
-      transition: 0.2s ease-out;
+    [data-theme="light"] .portfolio .img-container:hover{
+      opacity: 1;
     }
-
+    
     .weatherNow {
       position: relative;
       height: auto;
-      grid-row: 1/2;
+      grid-row: 4/5;
       display: flex;
       flex-direction: row;
       transition: 0.6s ease-in;
     }
-      .weatherNow .info {
-        left: 50px;
-        position: relative;
-        z-index: 9999;
-      }
-      .weatherNow .overlay {
-        position: relative;
-        margin-top: 50px;
-        height: 500px;
-        width: 970px;
-      }
-      .weatherNow .img-container {
-        right: 50px;
-      }
       .weatherNow .weatherNow-img {
-        position: absolute;
-        left: 0px;
-        margin-top: 50px;
-        height: 500px;
-        width: 970px;
+        max-height: 500px;
+        max-width: 970px;
+        width: 100%;
+        height: auto;
         object-fit: cover;
       }
-    
+    .glisson {
+        position: relative;
+        height: auto;
+        grid-row: 3/4;
+        display: flex;
+      }
+        .glisson .info {
+          text-align: right;
+          align-items: flex-end;
+          margin-left: 0px;
+          left: -20px;
+        }
+        .glisson .heading,
+        .glisson .title {
+          text-align: right;
+        }
+        .glisson .description-text {
+          left: -20px;
+        }
+        .glisson .img-container {
+          margin-left: 180px;
+        }
+        .glisson .glisson-img {
+          max-width: 970px;
+          width: 100%;
+          object-fit: cover;
+          }
+
     .foresome {
       position: relative;
       height: auto;
-      grid-row: 2/3;
+      grid-row: 5/6;
       display: flex;
     }
       .foresome .info {
-        display: flex;
-        flex-direction: column;
-        right: 80px;
-        position: relative;
-        margin-top: 100px;
-        z-index: 9999;
         text-align: right;
         align-items: flex-end;
+        margin-left: 0px;
+        left: -20px;
       }
       .foresome .heading,
       .foresome .title {
         text-align: right;
       }
       .foresome .description-text {
-        left: 40px;
-      }
-      .foresome .overlay {
-        position: relative;
-        margin-top: 50px;
-        height: 550px;
-        width: 1000px;
+        left: -20px;
       }
       .foresome .img-container {
-        left: 50px;
+        margin-left: 180px;
       }
       .foresome .foresome-img {
-        position: absolute;
-        margin-top: 50px;
-        height: 550px;
-        width: 1000px;
+        max-height: 550px;
+        max-width: 1000px;
         object-fit: fill;
-        left: 0px;
+        width: 100%;
+        height: auto;
         }
   
     .empire {
         position: relative;
         height: 100%;
-        grid-row:3/4;
+        grid-row:2/3;
         display: flex;
         flex-direction: row;
+        display: none;
       }
-      .empire .info {
-        left: 50px;
-        position: relative;
-        margin-top: 100px;
-        z-index: 9999;
-      }
-      .empire .info .tech {
-        width: 275px;
-      }
-      .empire .empire-img, .empire .overlay {
-        position: relative;
-        margin-top: 50px;
-        height: 460px;
-        width: 965px;
+      
+      .empire .img-container {
+        left: -40px;
       }
       .empire .empire-img {
-        position: absolute;
-        left: 0px;
+        max-height: 460px;
+        max-width: 965px;
+        width: 100%;
+        height: auto;
         object-fit: fill;
       }
-
 .contact {
   background-color: 
   #434577;
   display: flex;
   flex-direction: row;
-  position: relative;
   grid-area: contact;
-  height: 250px;
+  height: 300px;
   color: var(--header-text-color)
 }
   .contact .contact-text {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 550px;
-    margin: 25px 0 0 100px;
+    width: 700px;
+    margin: 50px 0 0 150px;
     opacity: 0;
   }
   .contact .contact-title {
@@ -774,7 +769,7 @@ body, html, #root, .App {
 
   }
   .contact .contact-icons {
-    margin: 4.5em 0 0 25em;
+    margin: 5em 0 0 15em;
   }
   .contact .jl-icon {
     width: 3.6rem;
@@ -795,14 +790,18 @@ body, html, #root, .App {
     content: 'JL';
     opacity: 1
   }
-  .contact .contact-desc {
+  .contact .contact-desc, .contact .mobile-desc {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: var(--fs-md);
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-align: left;
     margin-left: 12px;
+  }
+  .contact .mobile-desc {
+    display: none;
+
   }
   .contact .contact-icons {
     display: flex;
@@ -885,3 +884,375 @@ body, html, #root, .App {
   animation-timeline: view();
   animation-range: cover;
 }
+@media screen and (max-width: 430px) {
+  :root {
+      --header-height: 4rem;
+      
+      --body-padding: 1rem;
+      --email-width: 35px;
+      --email-height: 35px;
+      --github-width: 35px;
+      --github-height: 35px;
+      --linked-width: 26px;
+      --linked-height: 26px;
+      
+  }
+  
+      .main {
+        display: grid;
+        max-width: 425px;
+        grid-template-columns: 1fr;
+      }
+    
+      .content {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+          "landing"
+          "about"
+          "portfolio";
+      }
+      .contact-scroll {
+        display: none;
+      }
+
+      .landing {
+        height: 750px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .landing .HTML-text-flourish {
+        position: relative;
+        top: 80px;
+        left: 28px;
+        font-size: 1.6rem;
+      }
+
+      .landing .theme-tab {
+        display: inline;
+        position: fixed;
+        top: 125px;
+        right: 0px;
+        width: 28px;
+        height: 82px;
+        transform: rotateX(90);
+      }
+    
+      .landing .theme-tab .theme-text-flourish {
+        font-size: 1.0rem;
+      }
+
+      .landing .theme-tab .text-value {
+        font-size: 1.0rem;
+      }
+
+      .landing .hero-icon {
+        position: relative;
+        top: 20px;
+      }
+      .landing .hero-text {
+        font-size: var(--fs-md);
+        position: relative;
+        top: 160px;
+        left: 25px;
+      }
+      .landing .icon-text {
+        font-size: 6.4rem;
+        position: relative;
+        top: 100px;
+        left: 95px;
+        height: 64px;
+        width: 64px;
+        padding: 10px 10px 12px 10px;
+        min-width: 0px;
+        letter-spacing: -4px;
+      }
+
+      .landing #jl-icon {
+        animation: none;
+      }
+      .landing #jl-icon:before {
+        top: auto;
+
+      }
+      .landing .buttons {
+        position: absolute;
+        top: 500px;
+        left: 50vw;
+        bottom: 30px;
+        width: 225px;
+      }
+      .landing .button-text-flourish {
+        bottom: 15px;
+        font-size: var(--fs-base)
+      }
+      .landing .button-panel {
+        position: absolute;
+        right: 10vw;
+        width: 180px;
+        gap: 0.6em;
+      }
+      
+
+      .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+        .about .about-button {
+        display: none;
+      }
+    
+      .mobile-heading {
+      position: relative;
+      align-self: flex-start;
+      color: #FFF;
+      text-shadow: 0.5px 1px 7px #A0E0EE;
+      font-family: Montserrat;
+      font-size: 2.0rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      display: inline-block;
+      left: 8vw;
+    }
+      .about .background-box {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 80vw;
+        height: auto;
+        left: 8vw;
+        right: auto;
+        top: auto;
+        margin-top: 0px;
+      }
+      .background-box .title, .skills-box .title {
+        font-size: var(--fs-sm);
+        position: relative;
+        left: 0px;
+        width: 100%;
+        text-align: left;
+        margin-left: 0px;
+      }
+      .background-box .text1, .background-box .text2 {
+        left: 0px;
+        right: auto;
+        top: auto;
+        font-size: var(--fs-sm);
+        width: 100%;
+        line-height: 150%;
+      }
+      .background-box p {
+        text-align: left;
+      }
+      .about .skills-box {
+        position: relative;
+        margin-left: 8vw;
+        width: 92vw;
+        left: 0px;
+        top: auto;  
+      }
+      .skills-box .skills-card {
+        font-size: var(--fs-sm);
+      }
+      .skills-box .skills-cascade {
+        margin-left: 4vw;
+        gap: 12px;
+        padding: 0px;
+
+      }
+    
+      .portfolio {
+        row-gap: 0px;
+      }
+      .portfolio .info {
+        margin: 40px 0 0 7.5vw;
+        width: 85vw;
+        max-width: 85vw;
+      }
+      .portfolio .heading {
+        margin-left: 5vw;
+      }
+      .portfolio .title {
+        margin: 0px 0 0 5vw;
+
+      }
+      .portfolio .description-box {
+        position: absolute;
+        z-index: -1000;
+        opacity: 0.15;
+        height: 350px;
+        width: 85vw;
+        top: -25px;
+      }
+
+      .portfolio .info .heading {
+        color: #119DA4;
+        font-weight: 600;
+      }
+      .portfolio .description-text {
+        margin-left: 12vw;
+        width: 62vw
+      }
+      .portfolio .technology {
+        top: 60px;
+        margin: 0 0 30px 8vw;
+        font-size: var(--fs-xs);
+        max-width: 200px;
+      }
+      .portfolio .mobile-icons {
+        display: inline-flex;
+        position: relative;
+        flex-direction: row;
+        left: 250px;
+        top: 15px;
+      }
+      .portfolio .mobile-link {
+        margin-top: 7px;
+      }
+      .portfolio .img-container {
+        width: 75vw;
+        height: 235px;
+        left: -80vw;
+        top: 12px;
+        overflow: hidden;
+        opacity: 0.3;
+        margin-left: 0px
+      }
+  
+    .weatherNow {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 75px;
+    }
+      
+      .weatherNow .weatherNow-img {
+        height: 100%;
+        object-fit: cover;
+        object-position: 5px;
+        overflow: hidden;
+      }
+    
+    .glisson {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 100px;
+      }
+        .glisson .info {
+          left: auto;
+          right: 75vw;
+          margin-top: 0px;
+        }
+        .glisson .heading, .glisson .title {
+          margin-right: 5vw;
+        }
+        .glisson .img-container {
+          top: -10px;
+          left: 12.5vw;
+          right: auto;
+        }
+        .glisson .glisson-img {
+          height: 100%;
+          object-fit: cover;
+          object-position: 5px;
+          overflow: hidden;
+        }
+        .glisson .technology {
+          margin-right: 8vw;
+          top: 5px;
+        }
+        .glisson .mobile-icons {
+          left: auto;
+          top: 60px;
+          right: 250px;
+        }
+
+    .foresome {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 100px;
+    }
+      .foresome .info {
+        left: auto;
+        right: 75vw;
+        margin-top: 0px;
+      }
+      .foresome .heading, .foresome .title {
+        margin-right: 5vw;
+      }
+      .foresome .img-container {
+        top: -10px;
+        left: 12.5vw;
+        right: auto;
+      }
+      .foresome .foresome-img {
+        height: 100%;
+        object-fit: cover;
+        object-position: 5px;
+        overflow: hidden;
+      }
+      .foresome .technology {
+        margin-right: 8vw;
+        top: 15px;
+      }
+      .foresome .mobile-icons {
+        left: auto;
+        top: 60px;
+        right: 250px;
+      }
+
+    .empire {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+      .empire .empire-img {
+        height: 100%;
+        object-fit: cover;
+        object-position: 5px;
+        overflow: hidden;
+      }
+      .empire .mobile-icons {
+        top: 5px;
+      }
+
+    .contact {
+      flex-direction: column;
+      height: auto;
+    }
+      .contact .contact-text {
+      width: 100%;
+      margin: 25px 0 0 8vw;
+    }
+      .contact .contact-title {
+      font-size: var(--fs-md)
+    }
+      .contact .jl-icon {
+        width: 0.8em;
+        height: 0.8em;
+        font-size: 30px;
+        border: 4px solid;
+      }
+      .contact .contact-desc {
+        display: none;
+      font-size: var(--fs-xs);
+      margin-left: 0px;
+    }
+      .contact .mobile-desc {
+        display: block;
+        font-size: var(--fs-sm);
+        margin-left: 20px;
+        width: 260px;
+      }
+      .contact .contact-icons {
+      margin: 1em 2.5em 0.5em 0;
+      animation: none;
+      justify-content: flex-end;
+
+
+    }
+  }
