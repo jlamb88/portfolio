@@ -6,55 +6,60 @@ export const About = () => {
  return (
     <section className = 'about' id='about'>
         <AboutButton className="about-button"/>
-        <h1 className="mobile-heading">01. About</h1>
-        <section className='background-box'>
+         <div className="mobile-heading">
+            <h1>01. About</h1>
+        </div>
+        <section className='background-top'>
             <h2 className='title'> Background. </h2>
             <section className='text1'>
-                <p>My name is Joseph Lamb and I have had a diverse career path thus far. After graduating from Georgia Tech with a Bachelor’s Degree in Applied Psychology with a specialization in human factors, user interfaces, and man-machine systems, I worked for over 10 years as a business analyst and database analyst, gaining valuable technical skills and experience in data analysis, user testing and data reporting.</p>
-                <p>However, I realized that I wanted to make a more direct impact on people's lives, which led me to return to graduate school and become a physician assistant. For 15 years, I had the privilege of specializing in spinal and neurosurgery and helping my patients and recover from various conditions and procedures.</p>
-            </section>
-            <section className='text2'>
-                <p>Despite my fulfilling career as a physician assistant, I maintained a keen interest in technology and decided to return to the technical world and pursued certification as a full stack web developer at Georgia Tech and gained skills in both front-end and back-end web development and design. I am excited to apply my skills to develop innovative solutions to help you and your business with your needs.</p>
+                <p>My name is Joseph Lamb, and I have followed a dynamic, varied career path combining data science, healthcare, and technology. After earning my undergraduate degree from Georgia Tech, I spent over a decade as a business and database analyst. Driven by a desire to make a more direct impact, I transitioned to healthcare, working for 15 years as a physician assistant specializing in spinal and neurosurgery.</p>
             </section>
         </section>
-        <section className='skills-box'>
-            <h2 className='title'>Skills.</h2>
-            <div className='skills-cascade'>
-                <card className='skills-card'>
-                    JavaScript
-                </card>
-                <card className='skills-card'>
-                    React
-                </card>
-                <card className='skills-card'>
-                    HTML
-                </card>
-                <card className='skills-card'>
-                    CSS
-                </card>
-                <card className='skills-card'>
-                    Responsive Design
-                </card>
-                <card className='skills-card'>
-                    API
-                </card>
-                <card className='skills-card'>
-                    Figma
-                </card>
-                <card className='skills-card'>
-                    Github
-                </card>
-                <card className='skills-card'>
-                    Express
-                </card>
-                <card className='skills-card'>
-                    MongoDB
-                </card>
-                <card className='skills-card'>
-                    NodeJS
-                </card>
-                
+        <section className='skills-text'>
+            <div class="container">
+                <div className="skills-box">
+                    <h2 className='title'>Skills.</h2>
+                    <div className='skills-cascade'>
+                        <card className='skills-card'>
+                            JavaScript
+                        </card>
+                        <card className='skills-card'>
+                            React
+                        </card>
+                        <card className='skills-card'>
+                            HTML
+                        </card>
+                            <card className='skills-card'>
+                        CSS
+                        </card>
+                        <card className='skills-card'>
+                            Responsive Design
+                        </card>
+                        <card className='skills-card'>
+                            API
+                        </card>
+                        <card className='skills-card'>
+                            Figma
+                        </card>
+                        <card className='skills-card'>
+                            Github
+                        </card>
+                        <card className='skills-card'>
+                            Express
+                        </card>
+                        <card className='skills-card'>
+                            MongoDB
+                        </card>
+                        <card className='skills-card'>
+                            NodeJS
+                        </card> 
+                    </div>
+                </div>
             </div>
+            <section className='text2'>
+                <p>Despite my fulfilling medical career, I maintained an interest in the technical world and decided to return and completed certification as a full stack web developer at Georgia Tech gaining skills in both front-end and back-end web development and design. I am excited to apply my skills to develop innovative solutions to help with your business needs!</p>
+            </section>
+            
         </section>
        
     </section>

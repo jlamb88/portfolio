@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Caveat|Lato|Roboto');
 
 a {
     text-decoration: none;
@@ -32,7 +31,7 @@ a {
     }
 .button-label {
         position: absolute;
-        color: #d0d0d0;
+        color: #e9e9e9;
         font-family: "Lato", Helvetica;
         font-size: 16px;
         font-weight: 400;
@@ -82,28 +81,18 @@ a {
 
     80% {opacity: 0.1}
 
-    100% {pointer-events: all;}
+    100% {}
     
     }
-
-@keyframes hero-overlay {
-    to {
-        pointer-events: all;
-    }
-}
-#jl-icon {
-    pointer-events: none;
-    animation: hero-overlay 14s forwards;
-}
 
 #jl-icon::after {
     content: 'JL';
     opacity: 1;
     transition: opacity 0.6s ease-out;
-    animation: hero-icon-load 4s ease-in 1s;
+    animation: hero-icon-load 3s ease-in 1s;
     pointer-events: none;
-    }
-    
+}
+
 #jl-icon:hover::after {
     opacity: 0;
     content: '';
@@ -128,46 +117,35 @@ a {
     font-size: 9.0rem;
     font-weight: 700;
     letter-spacing: -8px;
-    display: inline-flex;
-    justify-content: center;
-    text-align: center;
-    position: absolute;
-    top: 160px;
-    left: 385px;
     border: 6px solid;
     border-color: var(--text-color);
     border-radius: 6px;
-    padding: 16px;
-    min-width: 100px;
+    padding: 0.2em;
     }
     
 .contact-scroll {
-    float: right;
     display: flex;
     flex-direction: column;
-    /* position: sticky;
-    bottom: 0px;
-    right: 20px; */
-    width: 60px;
-    /* margin: 200px 0px 0px 0px; */
     grid-area: contactScroll;
     background-color: transparent;
     z-index: 10;
-    /* height: 100vh;
-    min-height: 700px; */
+    height: 100vh;
+    min-height: 700px;
     height: auto;
     justify-content: flex-end;
+    align-items: center;
     }
     .contact-scroll ul {
         display: flex;
-        position: sticky;
-        bottom: 0px;
-        right: 20px;
-        margin: 200px 0px 0px 0px;
         flex-direction: column;
         align-items: center;
         padding: 0px;
         list-style: none;
+        position: sticky;
+        bottom: 0px;
+        right: 20px;
+        width: 80px;
+        margin: 200px 0px 0px 0px;
     }
     .contact-scroll li {
         padding: 4px;
@@ -222,16 +200,7 @@ a {
     .theme-scroll li {
         padding: 8px 0;
     }
-    .theme-scroll .theme-text-flourish {
-        color: var(--flourish-text-color);
-        font-family: "Caveat", Helvetica;
-        font-size: 28px;
-        font-weight: 400;
-        left: 12px;
-        letter-spacing: 0;
-        line-height: normal;
-        opacity: 0.4;
-        bottom: 0px;
+    #theme {
         writing-mode: vertical-rl;
         width: 100%;
       }     
@@ -240,7 +209,6 @@ a {
         border-radius: 0px 8px 8px 0px;
         height: 150px;
         left: 0px;
-        /* width: 35px; */
         opacity: 1;
       }     
     .theme-scroll .theme-tab .text-value {
@@ -248,30 +216,17 @@ a {
         font-family: "Content", Helvetica;
         font-size: 2.0rem;
         font-weight: 400;
-        left: -6px;
+        left: -25px;
         letter-spacing: -1px;
         line-height: normal;
         position: relative;
-        top: 70px;
+        top: 50px;
         writing-mode: vertical-rl;
-        width: 35px;
+        width: 55px;
 }
 
 @media screen and (max-width: 430px) {
    
-    .theme-scroll, .contact-scroll {
-        display: none;
-    }
-
-    .mobile-theme  {
-        display: inline;
-        position: fixed;
-        top: 125px;
-        right: 0px;
-        width: 28px;
-        height: 82px;
-      }
-    
     
     #jl-icon::after {
         animation: none;
@@ -299,7 +254,7 @@ a {
     
     .about-button .button-label , .contact-button .button-label {
         position: absolute;
-        bottom: 8px;
+        bottom: 5px;
         right: 5px;
         top: auto;
         left: auto;
@@ -308,4 +263,35 @@ a {
         width: 80px;
         height: 52px;
     }
+    .mobile-theme {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 40px;
+        background-color: transparent;
+        padding: 0px;
+    }
+        
+        .mobile-theme .theme-tab {
+            background-color: #636492;
+            border-radius: 0px 8px 8px 0px;
+            width: 25px;
+            height: 80px;
+            opacity: 1;
+          }
+        .mobile-theme .toggle span {
+            top: 10px;
+        }  
+     .mobile-theme .theme-tab .text-value {
+            color: var(--light-gray);
+            font-family: "Content", Helvetica;
+            font-size: 1rem;
+            font-weight: 400;
+            left: 8px;
+            letter-spacing: -1px;
+            line-height: normal;
+            position: relative;
+            top: 20px;
+            writing-mode: vertical-rl;
+     }
 }

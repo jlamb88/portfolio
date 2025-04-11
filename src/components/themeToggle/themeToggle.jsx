@@ -6,9 +6,14 @@ export const ThemeToggle = () => {
     const {theme, toggleTheme} = useTheme()
     return (
         <div>
-        <label className='toggle'>
-        <input type="checkbox" label={theme} onClick={toggleTheme}/>
-        <span className="slider"></span>
+        <label className='toggle' >
+        <input 
+            name='theme-toggle'
+            type='checkbox' 
+            label={theme} 
+            onChange={toggleTheme} 
+            aria-label='Toggle Light and Dark Theme'/>
+        <span className='slider'></span>
         </label>
         </div>
     )

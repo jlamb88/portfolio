@@ -1,6 +1,6 @@
 
 import {GithubIcon, LinkedInIcon, EmailIcon  } from "../assets/images";
-import { HeroIconDark} from "../components/HeroIconDark"
+import { HeroIcon} from "../components/HeroIcon"
 
 export const Contact = () => {
     return (
@@ -8,7 +8,7 @@ export const Contact = () => {
             <div className="contact-text">
                 <span className="contact-title">Contact.</span>
                 <div className="contact-row">
-                  <HeroIconDark className='jl-icon' id="contact-jl" aria-hidden='true'/>
+                  <HeroIcon className='jl-icon' id="contact-jl" aria-hidden='true'/>
                   <span className="contact-desc">Multi-faceted full stack web developer available to help maximize your web and digital presence</span>
                   <span className="mobile-desc">Multi-faceted developer here to help maximize your digital presence</span>
                 </div>

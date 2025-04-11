@@ -7,15 +7,17 @@ export const ThemeScroll = () => {
     const { theme } = useTheme()
     
     return (
-    <section className="theme-scroll">
+    <section className='theme-scroll'>
         <ul>
-            <li><span className="theme-text-flourish">&lt;theme&gt;</span></li>
-            <li><div className="theme-tab">
+            <li><span id='theme'className='text-flourish' aria-hidden='true' role='presentation'>&lt;theme&gt;</span></li>
+            <li><div className='theme-tab'>
                 <ThemeToggle />
-                    <span className="text-value">{theme}</span>
+                    <span className='text-value'>{theme}</span>
                 </div>
             </li> 
-        </ul>    
+            
+        </ul>
+         
     </section>
  )
 }

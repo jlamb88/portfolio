@@ -1,5 +1,5 @@
 import React from 'react';
-import { Landing, About, Portfolio, Contact } from '../pages';
+import { Landing, About, Portfolio } from '../pages';
 import { ThemeScroll, ContactScroll } from '../components';
 import { useTheme} from "../context/themeProvider"
 

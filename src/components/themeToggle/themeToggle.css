@@ -1,7 +1,7 @@
-:root {--toggle-height: 2rem;
-    --toggle-width: calc(1.8 * var(--toggle-height));
-    --toggle-padding: calc(var(--toggle-height) / 8);
-    --indicator-size: calc(var(--toggle-height) - 2 * var(--toggle-padding));
+:root {--toggle-width: 2rem;
+    --toggle-height: calc(1.8 * var(--toggle-width));
+    --toggle-padding: calc(var(--toggle-width) / 8);
+    --indicator-size: calc(var(--toggle-width) - 2 * var(--toggle-padding));
 }
 
 .toggle {
@@ -12,17 +12,11 @@
     appearance: none;
     position: relative;
     cursor: pointer;
-
     top: 20px;
-    right: 5px;
-    
     border-radius: var(--toggle-height);
     border: none;
     box-shadow: var(--inset-box-shadow);
-
     transition: 0.1s linear background;
-
-    transform: rotate(90deg);
 }
 
 .toggle input {
@@ -32,6 +26,7 @@
 }
 
 .toggle .slider {
+    position: relative;
     cursor: pointer;
     background-color: var(--toggle-background-off);
     transition: 0.1s linear background;
@@ -46,17 +41,13 @@
     height: var(--indicator-size);
     width: var(--indicator-size);
     left: var(--toggle-padding);
-    bottom: var(--toggle-padding);
+    top: var(--toggle-padding);
     background-color: var(--background-color);
     transition: 0.1s linear transform;
     border-radius: 50%;
     box-shadow: var(--box-shadow);
   }
-/*   
-  .toggle input:checked + .slider {
-    background-color: var(--toggle-background-on);
-  } */
-  
+
   .toggle input:checked + .slider:before {
-    transform: translateX(calc(var(--toggle-width) - var(--indicator-size) - 2 * var(--toggle-padding)));
+    transform: translateY(calc(var(--toggle-height) - var(--indicator-size) - 2 * var(--toggle-padding)));
   }

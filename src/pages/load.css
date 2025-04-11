@@ -1,0 +1,441 @@
+
+:root {
+  --white: #FFFFFF;
+  --lightest-gray: #fffffff5;
+  --light-gray: #cdcde8;
+  --gray: #868686;
+  --dark-gray: #4D4D4D;
+  --darkest-gray: #454545;
+  --black: #333333;
+  --deep-black: #222222;
+  --primary: #196EC2;
+  --alert: #DF2020;
+  --blue-haze: #c1c3db;
+  --celeste: #d0d0d0;
+  --mystic: #e3e8f0;
+  --periwinkle-gray: #cdcde8;
+  --shadow-blue: #8384ab;
+  --dark-blue-haze: #60638f;
+  --flourish-dark: #c0c0c0;
+  --flourish-light: #949494;
+ --theme-text:#ffffffb2;
+
+  --text-color: var(--black);
+  --weak-text-color: var(--dark-gray);
+  --link-color: var(--primary);
+  --icon-color: var(--black);
+  --background-color: var(--lightest-gray);
+  --hover-color: var(--light-gray);
+  --flourish-text-color: var(--flourish-dark);
+  --about-text: var(--mystic);
+
+  --inverted-background-color: var(--dark-gray);
+  --inverted-text-color: var(--white);
+
+  --background-text: var(--text-color);
+
+  --weak-border-color: var(--light-gray);
+  --border-color: var(--dark-gray);
+
+  --header-background-color: var(--primary);
+  --header-text-color: var(--white);
+
+  --card-background-color: var(--lightest-gray);
+  --toggle-background-off: var(--light-gray);
+  --toggle-background-on: var(--primary);
+
+  --button-background-color: var(--primary);
+  --button-border-color: var(--primary);
+  --button-text-color: var(--white);
+  --button-alert-color: var(--alert);
+
+  --flash-background-color: var(--primary);
+  --flash-text-color: var(--white);
+  --flash-alert-color: var(--alert);
+
+  --box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  --inset-box-shadow: 0 1px 3px rgba(0, 0, 0, .14) inset;
+
+  --dropdown-menu-background: var(--white);
+
+  --header-height: 5rem;
+  --body-padding: 2rem;
+  --footer-height: 16rem;
+  --nav-width: 16rem;
+
+  --email-width: 70px;
+  --email-height: 70px;
+  --github-width: 65px;
+  --github-height: 65px;
+  --linked-width: 55px;
+  --linked-height: 55px;
+}
+
+
+/* For browsers that support clamp  */
+@supports (font-size: clamp(1rem, 1vi, 1rem)) {
+  :root {
+        --fs-xs: clamp(1.1rem, 0.1vi + 1.1rem, 1.2rem);
+        --fs-sm: clamp(1.3rem, 0.2vi + 1.3rem, 1.5rem);
+        --fs-base: clamp(1.6rem, 0.3vi + 1.5rem, 1.9rem);
+        --fs-md: clamp(1.9rem, 0.4vi + 1.7rem, 2.4rem);
+        --fs-lg: clamp(2.3rem, 0.6vi + 2rem, 3rem);
+        --fs-xl: clamp(2.8rem, 0.9vi + 2.4rem, 3.7rem);
+        --fs-xxl: clamp(3.3rem, 1.3vi + 2.8rem, 4.6rem);
+        --fs-xxxl: clamp(4rem, 1.7vi + 3.3rem, 5.8rem);
+        --fs-h1: clamp(4.8rem, 2.4vi + 3.8rem, 7.2rem);
+  }
+}
+/* For browsers that don't support clamp */
+@supports not (font-size: clamp(1rem, 1vi, 1rem)) {
+  :root {
+        --fs-xs: 1.1rem;
+        --fs-sm: 1.3rem;
+        --fs-base: 1.6rem;
+        --fs-md: 1.9rem;
+        --fs-lg: 2.3rem;
+        --fs-xl: 2.8rem;
+        --fs-xxl: 3.3rem;
+        --fs-xxxl: 4rem;
+        --fs-h1: 4.8rem;
+  }
+  @media screen and (min-width: 1440px) {
+    :root {
+            --fs-xs: 1.2rem;
+            --fs-sm: 1.5rem;
+            --fs-base: 1.9rem;
+            --fs-md: 2.4rem;
+            --fs-lg: 3rem;
+            --fs-xl: 3.7rem;
+            --fs-xxl: 4.6rem;
+            --fs-xxxl: 5.8rem;
+            --fs-h1: 7.2rem;
+    }
+  }
+}
+
+
+
+html {
+  accent-color: var(--primary);
+  font-size: 62.5%;
+}
+
+[data-theme="dark"] {
+      --text-color: var(--light-gray);
+      --weak-text-color: var(--lightest-gray);
+      --link-color: var(--light-gray);
+      --icon-color: var(--light-gray);
+      --hover-color: var(--darkest-gray);
+      --flourish-text-color: var(--flourish-dark);
+      --about-text: var(--mystic);
+
+      --inverted-background-color: var(--lightest-gray); 
+
+      --background-text: var(--inverted-text-color);
+
+      --header-text-color: var(--white);
+
+      --weak-border-color: var(--dark-gray);
+      --border-color: var(--light-gray);
+      --background-color: #202142;
+      --button-border-color: var(--white);
+
+      --card-background-color: var(--darkest-gray);
+      --dropdown-menu-background: var(--black);
+      --toggle-background-off: var(--lightest-gray);
+
+  }
+
+
+
+[data-theme="light"] {
+  --text-color: var(--dark-blue-haze);
+  --weak-text-color: var(--dark-gray);
+  --link-color: var(--primary);
+  --icon-color: var(--black);
+  --background-color: var(--lightest-gray);
+  --hover-color: var(--light-gray);
+  --flourish-text-color: var(--flourish-light);
+  --about-text: var(--shadow-blue);
+
+  --inverted-background-color: var(--dark-gray);
+  --inverted-text-color: var(--white);
+
+  --background-text: var(--text-color);
+
+  --weak-border-color: var(--light-gray);
+  --border-color: var(--dark-gray);
+
+  --header-background-color: var(--primary);
+  --header-text-color: var(--dark-blue-haze);
+
+  --card-background-color: var(--lightest-gray);
+  --toggle-background-off: var(--light-gray);
+  --toggle-background-on: var(--dark-gray);
+
+  --box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  --inset-box-shadow: 0 1px 3px rgba(0, 0, 0, .14) inset;
+
+  --dropdown-menu-background: var(--white);
+
+}
+
+
+body, html, #root, .App {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  margin-block: 0.3em;
+}
+.App {
+  display: grid;
+  grid-template-areas:"main"
+                        "contact";
+  grid-template-rows: auto auto;
+  min-height: 100vh;
+  position: relative;
+  font-size: var(--fs-base);
+  margin: 0px;
+}
+
+.main {
+  grid-area: main;
+  grid-template-areas: "themeScroll content";
+  grid-template-columns: 40px 1fr;
+  display: grid;
+  background-color:var(--background-color);
+}
+
+.content {
+  display: inline-grid;
+  grid-template-columns: calc(100dvw - 120px) 80px;
+  grid-template-areas: "landing contactScroll"
+  "about contactScroll"
+  "portfolio contactScroll";
+  grid-template-rows: max-content max-content;
+}
+
+.landing {
+  height: max(750px, 100vh);
+  width: 100%;
+  position: relative;
+  grid-area: landing;
+}
+.landing-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(128, 128, 128, 0.7);
+    z-index: 999;
+    pointer-events: all;
+    animation: landing-fade-in 4000ms linear forwards;
+}
+.text-flourish {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: auto;
+  padding-inline-start: 2em;
+  color: var(--flourish-text-color);
+  font-family: "Caveat", Helvetica;
+  font-size: 2.8rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  opacity: 0.4;
+}
+#HTML {
+  height: max(100px,12vh);
+}
+#button {
+  right: 20%;
+}
+
+
+  .landing .hero-icon {
+    display: inline-flex;
+    position:relative;
+    width: auto;
+    min-width: 725px;
+    height: max(225px,40dvh);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    text-align: center;
+    padding-inline-start: 25dvw;
+  }
+  .landing .hero-text {
+    position: relative;
+    padding-block-start: 0.5em;
+    padding-inline-start: 0.5em;
+    color: var(--text-color);
+    font-family: "Montserrat", Helvetica;
+    font-size: 4.0rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: normal;
+    z-index: 99;
+  }
+  .landing .buttons {
+    display: flex;
+    position: relative;
+    height: max( 275px, 32vh);
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .landing .button-panel {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 16px;
+    right: clamp(100px, 6vw, 250px);
+    width: 300px;
+  }
+  
+  .landing .button-text-flourish {
+    position: relative;
+    right: 20%;
+    height: auto;
+    color: var(--flourish-text-color);
+    opacity: 0.4;
+    font-family: "Caveat", Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+.landing .mobile-theme {
+  display: none;
+}
+
+@keyframes landing-fade-in {
+  25% {
+    opacity: 0.5;
+  }
+  65% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes landing-pointer-events {
+  to {
+    pointer-events: none;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  :root {
+      --header-height: 4rem;
+      --body-padding: 1rem;
+      --email-width: 35px;
+      --email-height: 35px;
+      --github-width: 35px;
+      --github-height: 35px;
+      --linked-width: 26px;
+      --linked-height: 26px;
+
+      --toggle-width: 1.4rem
+      
+  }
+  
+      .main {
+        display: grid;
+        max-width: 430px;
+        grid-template-columns: 1fr;
+      }
+    
+      .content {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+          "landing"
+          "about"
+          "portfolio";
+      }
+      .contact-scroll {
+        display: none;
+      }
+      .theme-scroll {
+        display: none;
+      }
+
+
+      .landing {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+      }
+
+      .landing .text-flourish {
+        font-size: 2.0rem;
+        height: 12.5dvi;
+        width: auto;
+      }
+  
+    .landing .hero-icon {
+        position: relative;
+        height: 25dvh;
+        width: auto;
+        min-width: 0;
+        padding-inline-start: 25dvw;
+      }
+      .landing .hero-text {
+        font-size: var(--fs-md);
+        position: relative;
+    
+      }
+      .landing .icon-text {
+        font-size: 6.4rem;
+        position: relative;
+        height: 64px;
+        width: 64px;
+        padding: 0.2em;
+        letter-spacing: -4px;
+      }
+      .landing #jl-icon {
+        animation: none;
+      }
+      .landing #jl-icon:before {
+        top: auto;
+      }
+      
+    .landing #button {
+        right: 40%;
+      }
+    .landing .buttons {
+      height: 350px;
+    }
+    .landing .button-panel {
+        position: relative;
+        right: 10vw;
+        bottom: 0;
+        width: 180px;
+        gap: 0.6em;
+      }
+      .landing .mobile-theme {
+        display: flex;
+        position: absolute;
+        right: 0px;
+        top: 350px;
+      }
+      .mobile-theme .theme-tab {
+        border-radius: 8px 0 0 8px;
+      }
+    }
