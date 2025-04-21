@@ -1,5 +1,5 @@
 import React from 'react';
-import { PortfolioButton, AboutButton, ContactButton, HeroIcon, MobileTheme, ThemeToggle} from "../components";
+import { PortfolioButton, AboutButton, ContactButton, HeroIcon, MobileTheme} from "../components";
 
 import '../components/components.css'
 import './load.css'
