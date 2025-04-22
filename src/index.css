@@ -781,32 +781,32 @@ h2 {
 
 .contact .contact-text {
   animation: contact-text-slide linear forwards ;
-  animation-timeline: view();
-  animation-range: entry -300px;
+  animation-timeline: view() !important;
+  animation-range: entry -300px !important;
 }
 
 .contact .contact-icons {
   animation: contact-icons-slide linear;
-  animation-timeline: view();
-  animation-range: entry -25px;
+  animation-timeline: view() !important;
+  animation-range: entry -25px !important;
 }
 
 .about .about-button {
   animation: about-button-slide linear forwards;
-  animation-timeline: view();
-  animation-range: entry 200px cover 90%;
+  animation-timeline: view() !important;
+  animation-range: entry 200px cover 90% !important;
   
 }
 .about .skills-box {
   
   animation: skills-box-slide linear forwards;
-  animation-timeline: view();
-  animation-range: cover cover 30%;
+  animation-timeline: view() !important;
+  animation-range: cover cover 30% !important;
 }
 .skills-box .skills-card {
   animation: tile-slide linear forwards;
-  animation-timeline: view();
-  animation-range: entry contain 60%
+  animation-timeline: view() !important;
+  animation-range: entry contain 60% !important;
 }
 
 @media screen and (max-width: 430px) {

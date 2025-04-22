@@ -45,13 +45,13 @@ export const Portfolio = () => {
                     <a href='https://github.com/jlamb88/empire-cheesecakes' target='_blank' rel='noreferrer' role='button' aria-label='opens in new window' className='mobile-github'>
                         <MobileGithub color='var(--header-text-color)'/>
                     </a>
-                    <a href='https://empire-cheesecakes-5d8c7fea4138.herokuapp.com//' target='_blank' rel='noreferrer' role='button' aria-label='opens in new window' className='mobile-link'>
+                    <a href='https://empire-cheesecakes-7596462e28a1.herokuapp.com' target='_blank' rel='noreferrer' role='button' aria-label='opens in new window' className='mobile-link'>
                         <MobileLink color='var(--header-text-color)' width='25px' />
                     </a>
                 </div>
             </section>
             <div className='img-container'>
-                <a href='https://empire-cheesecakes-5d8c7fea4138.herokuapp.com/' target='_blank' rel='noreferrer' role='button' aria-label='opens in new window'>
+                <a href='https://empire-cheesecakes-7596462e28a1.herokuapp.com' target='_blank' rel='noreferrer' role='button' aria-label='opens in new window'>
                     <EmpireScreenshot className='empire-img'/>
                 </a>
             </div>
